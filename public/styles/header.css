@@ -6,3 +6,10 @@ html body header {
   background-color: DarkOrange;
   text-align: center;
 }
+
+html body header div{
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
