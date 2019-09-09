@@ -1,0 +1,8 @@
+html body header {
+  margin-top: 120px;
+  height: 400px;
+  width: 100%;
+  background-image: url("asfalt-light.png");
+  background-color: DarkOrange;
+  text-align: center;
+}
