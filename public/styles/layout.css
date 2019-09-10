@@ -31,3 +31,8 @@ h2{
  body nav span{
   font-family: 'Bungee', cursive;
  }
+
+main{
+  margin-left: 5%;
+  width: 90%;
+}

@@ -1,0 +1,31 @@
+html body main{
+  margin-top: 20px;
+}
+
+html body main form textarea{
+  width: 100%;
+  display: inline-block;
+  background-color: #f4f1ec;
+  border: none;
+  border-bottom: 5px solid black;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  resize: none;
+}
+
+html body main form textarea:focus{
+  outline: none;
+}
+
+html body main form input{
+  float: left;
+  background-color: #4056A1;
+  border: none;
+  color: #ffffff;
+  font-family: 'Bungee', cursive;
+}
+
+html body main form .counter{
+  float: right;
+  font-family: 'Bungee', cursive;
+}
