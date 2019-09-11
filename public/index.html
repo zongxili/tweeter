@@ -21,6 +21,7 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -31,7 +32,7 @@
     </nav>
 
     <!-- new added codes -->
-    <header>
+    <header class="cover-page-header">
       <div>
           <img src="/images/profile-hex.png">
           <h2>Your Name</h2>
@@ -43,11 +44,37 @@
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
-          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <textarea id ="tweetsArea" name="text" placeholder="What are you humming about?" maxlength="140"></textarea>
           <input type="submit" value="Tweet">
-          <span class="counter">140</span>
+          <span id="tweetsCharCount" class="counter">140</span>
         </form>
       </section>
+
+      <section class="tweets-container">
+        <article class="tweet">
+            <header>
+              <div class="left"> 
+                <span id="userName">Newton</span>
+              </div>
+              <div class="right"> 
+                <span id="userHandle">@SirIsaac</span>
+              </div>
+            </header>
+    
+            <p class="tweetText">Some dummy text here.</p>
+    
+            <footer>
+              <div class="date">
+                <span id="timeCreated">10 days ago</span>
+              </div>
+    
+              <div class="right"> 
+                <span>Some icon here</span>
+              </div>
+            </footer>
+          </article>
+      </section>
+
 
       <h4>This is the MAIN tag</h4>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In fugiat vitae cum libero! Animi, consequuntur hic veniam ducimus eveniet commodi pariatur, ut, explicabo odit molestiae assumenda cumque facilis id veritatis.</p>
