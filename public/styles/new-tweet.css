@@ -42,7 +42,6 @@ article.tweet {
   box-shadow: 5px 10px CornflowerBlue;
   transition: 1s;
   font-weight: bold;
-  visibility: visible;
 }
 
 article.tweet header{
