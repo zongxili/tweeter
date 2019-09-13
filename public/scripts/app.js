@@ -115,15 +115,10 @@ $(document).ready(function() { // Runs reloading the page
     let inputValue = $('#tweetsArea').val();
     if (inputValue === "" || inputValue === null) {
       $("#error-msg").text("The input is empty or null, please go check it");
-      $(".error-msg-section").animate({
-        height: 'toggle'
-      });
+       $(".error-msg-section").toggle(400);
     } else if (inputValue.length > 140) { // this approximately won't happen, since "max-length" added to the TextArea tag
       $("#error-msg").text("The length of input is above the Word Limitation.");
-      $(".error-msg-section").animate({
-        height: 'toggle'
-      });
-      // $('.error-msg-section').addClass('visible');
+      $(".error-msg-section").toggle(400);
     } else {
       inputValue = `<p>${escape(inputValue)}</p>`;
       console.log(event);

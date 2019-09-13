@@ -5,25 +5,6 @@
     body {    
       height: 100%;
       width: 100%;
-
-      // This my Position static / relative way to do the Desktop Version
-      // Will work on this later
-      // position: relative;
-      // background-color: lightblue;
-      // .cover-page-header{
-      //   margin: auto;
-      //   position: fixed;
-      //   width: 30%;
-      //   top: 50%;
-      //   transform: translateY(-50%);
-      //   // left: 15%;
-      //   // transform: translateX(-50%);
-      //   float: left;
-      // }
-      // main{
-      //   width: 60%;
-      //   float: right;
-      // }
       .grid-container{
         overflow: hidden;
         height: 100%;
