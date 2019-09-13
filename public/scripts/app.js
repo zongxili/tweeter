@@ -8,31 +8,35 @@ function getDateIfDate(jsonDate) {
   return date;
 }
 
-function timeSince(jsonDate) {
+// This code borrows the idea from an answer from this Stack Flow site: https://stackoverflow.com/questions/3177836/how-to-format-time-since-xxx-e-g-4-minutes-ago-similar-to-stack-exchange-site
+function timeInterval(jsonDate) {
+  // convert the Json date number to date format
   let postDate = new Date(jsonDate);
-
-  var seconds = Math.floor((new Date() - postDate) / 1000);
-
-  var interval = Math.floor(seconds / 31536000);
-
-  if (interval > 1) {
-    return interval + " years";
+  // "new Date()" gets the current time in a same format with postDate
+  // the seconds variable gets the gap between those 2 dates in seconds
+  let seconds = Math.floor((new Date() - postDate) / 1000);
+  // Divide by number of seconds in a whole year
+  // Omit following stages as the program gets the year
+  let count = Math.floor(seconds / 31536000);
+  if (count >= 1) {
+    return count + " years";
   }
-  interval = Math.floor(seconds / 2592000);
-  if (interval > 1) {
+  // Ignore the year if its less than a year
+  count = Math.floor(seconds / 2592000);
+  if (count >= 1) {
     return interval + " months";
   }
-  interval = Math.floor(seconds / 86400);
-  if (interval > 1) {
-    return interval + " days";
+  count = Math.floor(seconds / 86400);
+  if (count >= 1) {
+    return count + " days";
   }
-  interval = Math.floor(seconds / 3600);
-  if (interval > 1) {
-    return interval + " hours";
+  count = Math.floor(seconds / 3600);
+  if (count >= 1) {
+    return count + " hours";
   }
-  interval = Math.floor(seconds / 60);
-  if (interval > 1) {
-    return interval + " minutes";
+  count = Math.floor(seconds / 60);
+  if (count >= 1) {
+    return count + " minutes";
   }
   return Math.floor(seconds) + " seconds";
 }
@@ -42,7 +46,7 @@ const createTweetElement = function(dataObject) {
   const userName = dataObject.user.name;
   const userHandle = dataObject.user.handle;
   const userContent = dataObject.content.text;
-  const createdTime = timeSince((dataObject.created_at));
+  const createdTime = timeInterval((dataObject.created_at));
 
   const markup = `
     <article class="tweet">
@@ -80,27 +84,6 @@ const renderTweets = function(tweets) {
     $('#tweets-container').prepend(createTweetElement(tweets[i]));
   }
 };
-
-// $("form").submit(function( event ) {
-//   renderTweets(data);
-//   // $(#textArea)
-// });
-
-// Ajax part
-// const $submitButton = $('#tweet-submit-button');
-// $submitButton.on('click', function (event) {
-//   // setTimeout(function(){
-//   //   console.log('Button clicked, performing ajax call...');
-//   //   alert(event);
-//   // }, 1000);
-//   console.log('Button clicked, performing ajax call...');
-//   $.ajax('../index.html', { method: "POST" })
-//   .then(function (morePostsHtml) {
-//     console.log('Success: ', morePostsHtml);
-//     alert("THis is "+ morePostsHtml);
-//   });
-// });
-
 
 const escape =  function(str) {
   let div = document.createElement('div');

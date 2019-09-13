@@ -108,3 +108,7 @@ article.tweet footer{
   font-size: 15px;
   padding-top: 10px;
 }
+
+article.tweet header .profile-iden{
+  float: left;
+}
