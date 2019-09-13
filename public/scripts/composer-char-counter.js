@@ -26,14 +26,14 @@ const wordLimit = 140;
 $(document).ready(function() {
   // --- our code goes here ---
   $("#tweetsArea").on("input", function() {
-    let text = $( "#tweetsArea").val();
+    let text = $("#tweetsArea").val();
     let countChar = text.length;
     if (countChar < wordLimit) {
       $("#tweetsCharCount").text(wordLimit - countChar);
-      $("#tweetsCharCount").css( {"color" : "black"} );
+      $("#tweetsCharCount").css({"color" : "black"});
     } else {
       $("#tweetsCharCount").text(wordLimit - countChar);
-      $("#tweetsCharCount").css( {"color" : "red"} );
+      $("#tweetsCharCount").css({"color" : "red"});
     }
   });
 });

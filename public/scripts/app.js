@@ -37,9 +37,9 @@ const createTweetElement = function(dataObject) {
 
 const renderTweets = function(tweets) {
   for (let i = 0; i < tweets.length; i ++) {
-    $('#tweets-container').prepend(createTweetElement(tweets[i])); 
+    $('#tweets-container').prepend(createTweetElement(tweets[i]));
   }
-}
+};
 
 // $("form").submit(function( event ) {
 //   renderTweets(data);
@@ -49,7 +49,7 @@ const renderTweets = function(tweets) {
 // Ajax part
 // const $submitButton = $('#tweet-submit-button');
 // $submitButton.on('click', function (event) {
-//   // setTimeout(function(){ 
+//   // setTimeout(function(){
 //   //   console.log('Button clicked, performing ajax call...');
 //   //   alert(event);
 //   // }, 1000);
@@ -69,7 +69,7 @@ const escape =  function(str) {
 
 $(document).ready(function() { // Runs reloading the page
 
-  $("#arrow-down-button").click(function(){
+  $("#arrow-down-button").click(function() {
     $(".new-tweet").animate({
       height: 'toggle'
     });
@@ -78,14 +78,14 @@ $(document).ready(function() { // Runs reloading the page
   const loadTweets = function() {
     $('#tweetsArea').val("");
     $.ajax('/tweets', { method: 'GET' })
-    .then(function (response) {
-      renderTweets(response);
-    });
+      .then(function(response) {
+        renderTweets(response);
+      });
   };
   loadTweets();
 
   // This function is needed to be here since it uses the function loadTweets
-  $("#tweet-form").on( "submit", function( event ) { // Submiting a tweets
+  $("#tweet-form").on("submit", function(event) { // Submiting a tweets
     event.preventDefault();
     console.log('ABOUT TO SUBMIT FORM!!!!');
     let inputValue = $('#tweetsArea').val();
@@ -100,8 +100,7 @@ $(document).ready(function() { // Runs reloading the page
         height: 'toggle'
       });
       // $('.error-msg-section').addClass('visible');
-    }
-    else {
+    } else {
       inputValue = `<p>${escape(inputValue)}</p>`;
       console.log(event);
       event.preventDefault();
