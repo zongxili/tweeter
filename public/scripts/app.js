@@ -28,7 +28,11 @@ const createTweetElement = function(dataObject) {
         </div>
 
         <div class="right"> 
-          <span>Some icon here</span>
+          <span>
+            <i class="fas fa-flag"></i>
+            <i class="fas fa-retweet"></i>
+            <i class="fas fa-heart"></i>
+          </span>
         </div>
       </footer>
     </article>`;

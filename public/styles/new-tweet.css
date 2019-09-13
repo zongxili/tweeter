@@ -89,6 +89,10 @@ article.tweet footer .right span{
   color: #4056A1;
 }
 
+article.tweet footer .right span i{
+  margin-right: 10px;
+}
+
 article.tweet footer{
   width: 100%;
   border-top: 5px solid black;
