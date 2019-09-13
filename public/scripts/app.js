@@ -3,10 +3,38 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-
 function getDateIfDate(jsonDate) {
   let date = new Date(jsonDate);
   return date;
+}
+
+function timeSince(jsonDate) {
+  let postDate = new Date(jsonDate);
+
+  var seconds = Math.floor((new Date() - postDate) / 1000);
+
+  var interval = Math.floor(seconds / 31536000);
+
+  if (interval > 1) {
+    return interval + " years";
+  }
+  interval = Math.floor(seconds / 2592000);
+  if (interval > 1) {
+    return interval + " months";
+  }
+  interval = Math.floor(seconds / 86400);
+  if (interval > 1) {
+    return interval + " days";
+  }
+  interval = Math.floor(seconds / 3600);
+  if (interval > 1) {
+    return interval + " hours";
+  }
+  interval = Math.floor(seconds / 60);
+  if (interval > 1) {
+    return interval + " minutes";
+  }
+  return Math.floor(seconds) + " seconds";
 }
 
 const createTweetElement = function(dataObject) {
@@ -14,7 +42,7 @@ const createTweetElement = function(dataObject) {
   const userName = dataObject.user.name;
   const userHandle = dataObject.user.handle;
   const userContent = dataObject.content.text;
-  const createdTime = getDateIfDate(dataObject.created_at);
+  const createdTime = timeSince((dataObject.created_at));
 
   const markup = `
     <article class="tweet">
@@ -32,7 +60,7 @@ const createTweetElement = function(dataObject) {
 
       <footer>
         <div class="date">
-          <span id="timeCreated">${createdTime}</span>
+          <span id="timeCreated">${createdTime} ago</span>
         </div>
 
         <div class="right"> 
