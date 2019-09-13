@@ -10,15 +10,18 @@
     <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css">
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/desktop.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
-
+    <script type="text/javascript" src="/scripts/app.js"></script>
     <!-- App JS -->
   
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
@@ -28,46 +31,44 @@
 
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <span class="logo">tweeter</span>
+      <div class="new-tweet-click">
+        <span><strong>Write</strong> a new tweet</span>
+        <i class="fas fa-angle-double-down" id="arrow-down-button"></i>
+      </div>
     </nav>
 
     <!-- new added codes -->
-    <header class="cover-page-header">
-      <div>
+    <div class="grid-container">
+      <header class="cover-page-header">
+        <div>
           <img src="/images/profile-hex.png">
           <h2>Your Name</h2>
-      </div>
-    </header>
+        </div>
+      </header>
+    
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <div class="error-msg-section" style = "display: none">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span id="error-msg">some value</span>
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+  
+          <h2>Compose Tweet</h2>
+          <form id="tweet-form">
+            <textarea id ="tweetsArea" name="text" placeholder="What are you humming about?" maxlength="140"></textarea>
+            <input type="submit" id="tweet-submit-button" value="Tweet">
+            <span id="tweetsCharCount" class="counter">140</span>
+          </form>
+        </section>
+  
+        <section id="tweets-container">
+          <!-- all tweets go to here -->
+        </section>
+      </main>
+    </div>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form action="/tweets" method="POST">
-          <textarea id ="tweetsArea" name="text" placeholder="What are you humming about?" maxlength="140"></textarea>
-          <input type="submit" value="Tweet">
-          <span id="tweetsCharCount" class="counter">140</span>
-        </form>
-      </section>
-
-      <section id="tweets-container">
-        <!-- all tweets go to here -->
-      </section>
-
-
-      <h4>This is the MAIN tag</h4>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In fugiat vitae cum libero! Animi, consequuntur hic veniam ducimus eveniet commodi pariatur, ut, explicabo odit molestiae assumenda cumque facilis id veritatis.</p>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In fugiat vitae cum libero! Animi, consequuntur hic veniam ducimus eveniet commodi pariatur, ut, explicabo odit molestiae assumenda cumque facilis id veritatis.</p>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In fugiat vitae cum libero! Animi, consequuntur hic veniam ducimus eveniet commodi pariatur, ut, explicabo odit molestiae assumenda cumque facilis id veritatis.</p>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In fugiat vitae cum libero! Animi, consequuntur hic veniam ducimus eveniet commodi pariatur, ut, explicabo odit molestiae assumenda cumque facilis id veritatis.</p>
-
-    </main>
-    <p>-------------------------------------------</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In fugiat vitae cum libero! Animi, consequuntur hic veniam ducimus eveniet commodi pariatur, ut, explicabo odit molestiae assumenda cumque facilis id veritatis.</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In fugiat vitae cum libero! Animi, consequuntur hic veniam ducimus eveniet commodi pariatur, ut, explicabo odit molestiae assumenda cumque facilis id veritatis.</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In fugiat vitae cum libero! Animi, consequuntur hic veniam ducimus eveniet commodi pariatur, ut, explicabo odit molestiae assumenda cumque facilis id veritatis.</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In fugiat vitae cum libero! Animi, consequuntur hic veniam ducimus eveniet commodi pariatur, ut, explicabo odit molestiae assumenda cumque facilis id veritatis.</p>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. In fugiat vitae cum libero! Animi, consequuntur hic veniam ducimus eveniet commodi pariatur, ut, explicabo odit molestiae assumenda cumque facilis id veritatis.</p>
-    <script type="text/javascript" src="/scripts/app.js"></script>
   </body>
 </html>

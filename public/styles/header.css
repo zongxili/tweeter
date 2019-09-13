@@ -13,3 +13,10 @@ html body .cover-page-header div{
   top: 50%;
   transform: translateY(-50%);
 }
+
+html body .cover-page-header div {
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
