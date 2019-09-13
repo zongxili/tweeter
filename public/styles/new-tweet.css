@@ -61,6 +61,12 @@ article.tweet header{
   background-color: none;
 }
 
+article.tweet header{
+  width: 100%;
+  display: inline-block;
+  background-color: none;
+}
+
 article.tweet div{
   display: inline;
 }

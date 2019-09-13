@@ -3,16 +3,24 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
+function getDateIfDate(jsonDate) {
+  let date = new Date(jsonDate);
+  return date;
+}
+
 const createTweetElement = function(dataObject) {
+  const userAvatar = dataObject.user.avatars;
   const userName = dataObject.user.name;
   const userHandle = dataObject.user.handle;
   const userContent = dataObject.content.text;
-  const createdTime = dataObject.created_at;
+  const createdTime = getDateIfDate(dataObject.created_at);
 
   const markup = `
     <article class="tweet">
       <header>
-        <div class="left"> 
+        <div class="profile-iden">
+          <img src=${userAvatar} alt="Smiley face" width="42" height="42">
           <span id="userName">${userName}</span>
         </div>
         <div class="right"> 
@@ -64,6 +72,7 @@ const renderTweets = function(tweets) {
 //     alert("THis is "+ morePostsHtml);
 //   });
 // });
+
 
 const escape =  function(str) {
   let div = document.createElement('div');
