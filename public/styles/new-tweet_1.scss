@@ -51,23 +51,24 @@ html {
             transition: 1s;
             font-weight: bold;
           }
-          header{
-            width: 100%;
-            display: inline-block;
-            background-color: none;
-          }
-        } // end of the Tweet class
+        }
       }
     }
   }
 }
 /* The single tweet part */
 
-// article.tweet header{
-//   width: 100%;
-//   display: inline-block;
-//   background-color: none;
-// }
+.tweet:hover {
+  box-shadow: 5px 10px CornflowerBlue;
+  transition: 1s;
+  font-weight: bold;
+}
+
+article.tweet header{
+  width: 100%;
+  display: inline-block;
+  background-color: none;
+}
 
 article.tweet header{
   width: 100%;
