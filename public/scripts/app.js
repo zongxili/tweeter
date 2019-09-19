@@ -92,13 +92,11 @@ const escape =  function(str) {
 };
 
 $(document).ready(function() { // Runs reloading the page
-
   $("#arrow-down-button").click(function() {
     $(".new-tweet").animate({
       height: 'toggle'
     });
   });
-
   const loadTweets = function() {
     $('#tweetsArea').val("");
     $.ajax('/tweets', { method: 'GET' })

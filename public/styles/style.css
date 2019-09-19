@@ -23,7 +23,8 @@ html body .cover-page-header {
   width: 100%;
   background-image: url("asfalt-light.png");
   background-color: DarkOrange;
-  text-align: center; }
+  text-align: center;
+  font-family: 'Bungee', cursive; }
   html body .cover-page-header div {
     display: inline-block;
     position: relative;
@@ -58,24 +59,27 @@ html body main {
     border: none;
     color: #ffffff;
     font-family: 'Bungee', cursive; }
+    html body main .new-tweet form input:hover {
+      box-shadow: 5px 5px 20px lightskyblue;
+      transition: 1.5s;
+      margin-top: 10px; }
   html body main .new-tweet form .counter {
     float: right;
     font-family: 'Bungee', cursive; }
   html body main #tweets-container .tweet {
     border: 10px solid black;
-    margin-top: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 80px;
+    margin-bottom: 20px;
     padding: 20px; }
     html body main #tweets-container .tweet:hover {
-      box-shadow: 5px 10px CornflowerBlue;
+      background-color: #e2dfd9;
+      box-shadow: 5px 10px 10px CornflowerBlue;
       transition: 1s;
       font-weight: bold; }
 
 /* The single tweet part */
-.tweet:hover {
-  box-shadow: 5px 10px CornflowerBlue;
-  transition: 1s;
-  font-weight: bold; }
-
 article.tweet header {
   width: 100%;
   display: inline-block;
