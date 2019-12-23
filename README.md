@@ -39,5 +39,5 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Dependencies
 
-- Express
+- Express 4.13.x
 - Node 5.10.x or above
